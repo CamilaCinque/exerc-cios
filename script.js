@@ -1,4 +1,6 @@
-/* 1. Verificar maioridade
+/* 🟢 Nível Básico
+
+1. Verificar maioridade
 
 Crie um programa que solicite a idade de uma pessoa e informe se ela é maior de idade (18 anos ou mais) ou menor de idade. */
 
@@ -93,7 +95,9 @@ if (resultado === 0) {
     alert("Número ímpar!") 
 }
 
-/* 1. Calculadora simples
+/* 🟡 Nível Intermediário
+
+1. Calculadora simples
 
 Crie uma calculadora que: solicite o primeiro número; solicite a operação desejada (+, -, * ou /); solicite o segundo número. 
 
@@ -173,4 +177,95 @@ if (acessoAdmin) {
     alert("Acesso liberado!")
 } else {
     alert("Acesso negado!")
+}
+
+/* 🔴 Nível Avançado
+
+1. Classificação de triângulos
+Solicite ao usuário os comprimentos dos três lados de um possível triângulo.
+Primeiro, verifique se os valores realmente podem formar um triângulo.
+Caso possam, classifique-o como:
+Equilátero (todos os lados iguais); 
+Isósceles (dois lados iguais); 
+Escaleno (todos os lados diferentes). 
+Caso não seja possível formar um triângulo, informe isso ao usuário. */
+
+let triangulo1 = Number(prompt("Informe a 1ª medida:"))
+let triangulo2 = Number(prompt("Informe a 2ª medida:"))
+let triangulo3 = Number(prompt("Informe a 3ª medida:"))
+
+if (triangulo1 + triangulo2 > triangulo3 && triangulo1 + triangulo3 > triangulo2 && triangulo2 + triangulo3 > triangulo1)
+{ if (Number.isNaN(triangulo1, triangulo2, triangulo3)) {
+    alert("Valor inválido. Informe somente números.")
+} else if (triangulo1 === triangulo2 && triangulo2 === triangulo3) {
+    alert("Este triângulo é equilátero (todos os lados são iguais.)")
+} else if (triangulo1 === triangulo2  || triangulo2 === triangulo3 || triangulo1 === triangulo3) {
+    alert("Este triângulo é isósceles (somente dois lados são iguais.)")
+} else {
+    alert("Este triângulo é escaleno (todos os lados são diferentes).")
+}}
+
+/* 2. Conversão de notas (Conceitos)
+Solicite uma nota entre 0 e 100 e converta-a para um conceito conforme a tabela abaixo:
+A: 90 a 100 
+B: 80 a 89 
+C: 70 a 79 
+D: 60 a 69 
+E: abaixo de 60 
+Exiba o conceito correspondente. */
+
+let nota01 = Number(prompt("Informe a sua nota:"))
+
+if (Number.isNaN(nota01)){
+    alert("Valor inválido. Informe somente números.")
+} else if (nota01 <= 100 && nota01 >= 90) {
+    alert("O conceito é: A")
+} else if (nota01 >= 80) {
+    alert("O conceito é: B")
+} else if (nota01 >= 70) {
+    alert("O conceito é: C")
+} else if (nota01 >= 60) {
+    alert("O conceito é: D")
+} else if (nota01 <60 && nota01 >= 0) {
+    alert("O conceito é: E")
+} else {
+    alert("Valor inválido. Informe um número entre 0 e 100.")
+}
+
+/* 3. Cálculo de IMC
+Solicite o peso (em quilogramas) e a altura (em metros) de uma pessoa.
+Calcule o Índice de Massa Corporal (IMC) e informe sua classificação:
+Abaixo do peso 
+Peso normal 
+Sobrepeso 
+Obesidade */
+
+let peso = Number(prompt ("Informe o seu peso (kg):"))
+let altura = Number(prompt("Informe a sua altura (m):"))
+
+let imc = peso / (altura ** 2)
+
+if (imc < 18.5) {
+    alert("IMC = " + imc.toFixed(2) + ". ⚠️ Você está abaixo do seu peso ideal. ⚠️")
+} else if (imc >= 18.5 && imc <= 24.9){
+    alert("IMC = " + imc.toFixed(2) + ". ✅ Você está no seu peso ideal. ✅")
+} else if (imc >= 25 && imc <= 29.9) {
+    alert("IMC = " + imc.toFixed(2) + ". ⚠️ Você está com sobrepeso. ⚠️")
+} else {
+    alert("IMC = " + imc.toFixed(2) + ". ⚠️ Você está com obesidade. ⚠️")
+}
+
+/* 4. Ano Bissexto
+Solicite ao usuário um ano e informe se ele é bissexto ou não bissexto.
+Considere as seguintes regras:
+Um ano é bissexto se for divisível por 400; ou 
+Se for divisível por 4 e não for divisível por 100. 
+Caso contrário, o ano não é bissexto. */
+
+let ano = Number(prompt("Informe um ano:"))
+
+if (ano % 4 === 0 && ano % 100 !== 0 || ano % 400 === 0) {
+    alert(ano + " é um ano bissexto.")
+} else {
+    alert(ano + " não é um ano bissexto.")
 }
