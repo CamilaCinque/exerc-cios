@@ -39,21 +39,13 @@
 
 // const numeroinformado = Number(prompt("Informe um número inteiro:"))
 
+// let resultado = 0;
 // for (let i = 1; i <= numeroinformado; i++) {
 
-//     const resultado = numeroinformado + i
-//     console.log(resultado);
+//     resultado += i 
 // }
 
-const numeroinformado = Number(prompt("Informe um número inteiro:"))
-
-let resultado = 0;
-for (let i = 1; i <= numeroinformado; i++) {
-
-    resultado += i 
-}
-
-console.log(resultado);
+// console.log(resultado);
 
 // 🟡 Nível Intermediário
 // 4. Números pares de 1 a 50
